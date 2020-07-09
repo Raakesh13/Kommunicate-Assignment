@@ -1,11 +1,11 @@
 from flask import Flask, jsonify
 from flask_restful import Api
-from resources.MoviesToWorkOn import MoviesToWorkOn
+from resources.MoviesToWorkOn import Movies
 
 app = Flask(__name__)
 api = Api(app)
 
-api.add_resource(MoviesToWorkOn, '/moviestoworkon')
+api.add_resource(Movies, '/movies')
 
 if __name__ == '__main__':
     app.run(debug=True)
