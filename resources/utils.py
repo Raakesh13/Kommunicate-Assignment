@@ -32,6 +32,8 @@ def maximizeProfit(movies):
     #Coverting the movies list into an array
     for movie in movies:
         moviesList.append([dateToDay(movies[movie]['endtime']), dateToDay(movies[movie]['starttime']), movie ])
+        if moviesList[-1][0] < moviesList[-1][1]:
+            return {'error':"endtime should be greater than starttime"}
 
     moviesList.sort() #Sorts the array based on the end date of movie
 

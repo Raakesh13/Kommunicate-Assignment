@@ -9,4 +9,6 @@ class Movies(Resource):
         body = request.get_json(force=True)        
         movies = body['moviesList']
         res = maximizeProfit(movies)
+        if 'error' in res:
+            return make_response(jsonify(res), 422)
         return make_response(jsonify(res), 200)
